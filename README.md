@@ -1,26 +1,53 @@
 # Code and Erratum for *Growth Problems for Representations of Finite Monoids*
 
-I collected a bit of Python code relevant for the paper *Big data approach to Kazhdan&#8211;Lusztig polynomials*
-<a href="https://arxiv.org/abs/2412.01283">https://arxiv.org/abs/2412.01283</a> on this page. In 2024, the code runs in <a href="https://colab.google/">Google Colab</a>.
+I collected a bit of <a href="https://www.gap-system.org/">GAP</a> and 
+<a href="https://magma.maths.usyd.edu.au/magma/">Magma</a> code relevant for the paper *Growth Problems for Representations of Finite Monoids*
+<a href="https://arxiv.org/abs/2412.01283">https://arxiv.org/abs/2412.01283</a> on this page.
 
-Here is are two links where to download the data associated to the project (all in .txt files): 
+Here is are two links where to download the data associated to the project (all in .csv files): 
+- <a href="https://www.dropbox.com/scl/fo/uwh9nr9fg9sv2egmrph2z/h?rlkey=bmvxgpymlbd3g7p8x2jsm4b2p&e=1&dl=0">Click</a>.
+- <a href="https://www.dropbox.com/scl/fo/uwh9nr9fg9sv2egmrph2z/h?rlkey=bmvxgpymlbd3g7p8x2jsm4b2p&e=1&dl=0">Click</a>.
 
-- <a href="http://www.normalesup.org/~lacabanne/kl/KL_polynomials_symmetric_group.html">Click</a>. This link is prefered.
-- <a href="https://www.dropbox.com/scl/fo/uwh9nr9fg9sv2egmrph2z/h?rlkey=bmvxgpymlbd3g7p8x2jsm4b2p&e=1&dl=0">Click</a>. This link is a backup.
-
-An Erratum for the paper *Big data approach to Kazhdan&#8211;Lusztig polynomials* can be found at the bottom of the page.
+An Erratum for the paper *Growth Problems for Representations of Finite Monoids* can be found at the bottom of the page.
 
 # Contact
 
-If you find any errors in the paper *Big data approach to Kazhdan&#8211;Lusztig polynomials* **please email me**:
+If you find any errors in the paper *Growth Problems for Representations of Finite Monoids* **please email me**:
 
 [dtubbenhauer@gmail.com](mailto:dtubbenhauer@gmail.com?subject=[GitHub]%web-reps)
 
 Same goes for any errors related to this page.
 
-# Code and data
+# Monoids of small order
 
-To do
+The *Smallsemi* package in GAP contains data for all semigroups of order up to 8. The following GAP code creates a 
+.csv file (first link above) with three columns: the semigroup ID, the order of the group of units, and the 
+multiplication table. This contains data for all monoids of order 4 up to isomorphism and anti-isomorphism.
+
+```
+LoadPackage("Smallsemi");
+LoadPackage("Semigroups");
+
+outputFile := OutputTextFile("semigroups_data.csv", false);
+AppendTo(outputFile, "Semigroup ID,Multiplication Table,Order of Group of Units\n");
+
+semigroups := AllSmallSemigroups(4, IsMonoidAsSemigroup, true);
+for sg in semigroups do
+    id := IdSmallSemigroup(sg);
+    multTable := RecoverMultiplicationTable(Size(sg), id[2]);
+    multTableFormatted := Concatenation("[", JoinStringsWithSeparator(List(multTable, row -> Concatenation
+    ("[", JoinStringsWithSeparator(row, ", "), "]")), ", "), "]");
+    orderOfUnits := Size(GroupOfUnits(Semigroup(sg)));
+    csvLine := Concatenation(
+        "\"", String(id), "\"", ",",
+        "\"", multTableFormatted, "\"", ",",
+        String(orderOfUnits), "\n"
+    );
+    AppendTo(outputFile, csvLine);
+od;
+
+CloseStream(outputFile);
+```
 
 # Erratum
 
