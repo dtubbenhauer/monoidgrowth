@@ -5,8 +5,8 @@ I collected a bit of <a href="https://www.gap-system.org/">GAP</a> and
 <a href="https://arxiv.org/abs/2412.01283">https://arxiv.org/abs/2412.01283</a> on this page.
 
 Here is are two links where to download the data associated to the project (all in .csv files): 
-- <a href="https://www.dropbox.com/scl/fo/uwh9nr9fg9sv2egmrph2z/h?rlkey=bmvxgpymlbd3g7p8x2jsm4b2p&e=1&dl=0">Click</a>.
-- <a href="https://www.dropbox.com/scl/fo/uwh9nr9fg9sv2egmrph2z/h?rlkey=bmvxgpymlbd3g7p8x2jsm4b2p&e=1&dl=0">Click</a>.
+- <a href="https://github.com/dtubbenhauer/monoidgrowth/blob/main/semigroups_results.csv">Click</a>.
+- <a href="https://github.com/dtubbenhauer/monoidgrowth/blob/main/semigroups_data.csv">Click</a>.
 
 An Erratum for the paper *Growth Problems for Representations of Finite Monoids* can be found at the bottom of the page.
 
