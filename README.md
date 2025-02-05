@@ -88,7 +88,7 @@ def full_transformation_monoid_matrix(n):
 
 # Direct product of monoids
 
-If we have the multiplication tables for two monoids, \(M_1, M_2\), we can use the following Python code to obtain the multiplication table for \(M_1\times M_2\).
+If we have the multiplication tables for two monoids, $M_1, M_2$, we can use the following Python code to obtain the multiplication table for $M_1\times M_2$.
 
 ```
 def direct_product_table(M1_table, M2_table):
@@ -127,10 +127,10 @@ def direct_product_table(M1_table, M2_table):
 
 # Setting up the monoid algebras and computing the growth rate
 
-Using the following code, we obtain the constant \(v_0w_0^T[1]\) (in the notation of <a href="https://arxiv.org/abs/2307.03044">https://arxiv.org/abs/2307.03044</a>) in the periodic expression of 
-\(a(n)\) for each projective indecomposable \(kM\)-module \(V\), where \(M\) is a monoid of order 4. We do this by first setting up the monoid algebra as a matrix algebra 
+Using the following code, we obtain the constant $v_0w_0^T[1]$ (in the notation of <a href="https://arxiv.org/abs/2307.03044">https://arxiv.org/abs/2307.03044</a>) in the periodic expression of 
+$a(n)$ for each projective indecomposable $kM$-module $V$, where $M$ is a monoid of order 4. We do this by first setting up the monoid algebra as a matrix algebra 
 in Magma. Given the multiplication tables of the monoids, we create the matrices which generate this algebra, using the functions *left_regular_representation* 
-and *matrix_to_magma*. Then, using the function *generate_magma_code* we set up the corresponding monoid algebra of a multiplication table and computes the constant \(v_0w_0^T[1]\) for each projective indecomposable \(kM\)-module. 
+and *matrix_to_magma*. Then, using the function *generate_magma_code* we set up the corresponding monoid algebra of a multiplication table and computes the constant $v_0w_0^T[1]$ for each projective indecomposable $kM$-module. 
 Here is Python code:
 
 ```
@@ -314,7 +314,7 @@ def process_csv(input_csv, output_csv, start_row=0, prime=0, timeout=60):
 process_csv("semigroups_data.csv", "semigroups_results.csv", start_row=0,prime=11, timeout=100)   
 ```
 
-The output is written to a file as in the first link above. The file has three columns: the monoid ID, the order of the group of units, and the magma output giving the constants \(v_0w_0^T[1]\) for each projective indecomposable \(kM\)-module.
+The output is written to a file as in the first link above. The file has three columns: the monoid ID, the order of the group of units, and the magma output giving the constants $v_0w_0^T[1]$ for each projective indecomposable $kM$-module.
 
 We note that the *smallsemi* package of GAP gives the multiplication table of all monoids up to isomorphism and anti-isomorphism, so to check for all monoids of order 4 we also have to consider the opposites of 
 the monoid algebras considered above. This may be done by working with the right regular representations instead.
