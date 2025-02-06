@@ -2,7 +2,7 @@
 
 I collected a bit of <a href="https://www.gap-system.org/">GAP</a>, Python and 
 <a href="https://magma.maths.usyd.edu.au/magma/">Magma</a> code relevant for the paper *Growth Problems for Representations of Finite Monoids*
-<a href="https://arxiv.org/abs/2412.01283">https://arxiv.org/abs/2412.01283</a> on this page.
+<a href="https://arxiv.org/abs/2502.02849">https://arxiv.org/abs/2502.02849</a> on this page.
 
 Here is are two links where to download the data associated to the project (all in .csv files): 
 - <a href="https://github.com/dtubbenhauer/monoidgrowth/blob/main/semigroups_results.csv">Click</a>.
